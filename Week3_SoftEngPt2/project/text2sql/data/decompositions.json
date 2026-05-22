@@ -1,0 +1,628 @@
+[
+  {
+    "id": 1,
+    "question": "List all products",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["products"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 2,
+    "question": "Get all customers",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["customers"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 3,
+    "question": "Show all orders",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["orders"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 4,
+    "question": "List all employees",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["employees"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 5,
+    "question": "Get all offices",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["offices"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 6,
+    "question": "Show all product lines",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["productlines"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 7,
+    "question": "List all payments",
+    "intent": "Retrieve every row from a single table",
+    "tables": ["payments"],
+    "columns": ["*"],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 8,
+    "question": "Get product names and prices",
+    "intent": "Project product name with both buy and sell prices",
+    "tables": ["products"],
+    "columns": ["\"productName\"", "\"MSRP\"", "\"buyPrice\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 9,
+    "question": "Get customer names and cities",
+    "intent": "Project two columns from one table",
+    "tables": ["customers"],
+    "columns": ["\"customerName\"", "\"city\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 10,
+    "question": "List employee first and last names",
+    "intent": "Project two columns from one table",
+    "tables": ["employees"],
+    "columns": ["\"firstName\"", "\"lastName\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 11,
+    "question": "Get all order dates",
+    "intent": "Project order identifier with order date, sorted",
+    "tables": ["orders"],
+    "columns": ["\"orderNumber\"", "\"orderDate\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"orderDate\""],
+    "distinct": false
+  },
+  {
+    "id": 12,
+    "question": "Show product vendor list",
+    "intent": "Distinct vendors across products",
+    "tables": ["products"],
+    "columns": ["\"productVendor\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"productVendor\""],
+    "distinct": true
+  },
+  {
+    "id": 13,
+    "question": "Get all product codes",
+    "intent": "Project the product primary key",
+    "tables": ["products"],
+    "columns": ["\"productCode\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"productCode\""],
+    "distinct": false
+  },
+  {
+    "id": 14,
+    "question": "List all countries from offices",
+    "intent": "Distinct list of countries where the company has an office",
+    "tables": ["offices"],
+    "columns": ["\"country\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"country\""],
+    "distinct": true
+  },
+  {
+    "id": 15,
+    "question": "Show all order statuses",
+    "intent": "Distinct status values for orders",
+    "tables": ["orders"],
+    "columns": ["\"status\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"status\""],
+    "distinct": true
+  },
+  {
+    "id": 16,
+    "question": "Get all payment amounts",
+    "intent": "Project the payment amount column, largest first",
+    "tables": ["payments"],
+    "columns": ["\"amount\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"amount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 17,
+    "question": "List all job titles",
+    "intent": "Distinct job titles across employees",
+    "tables": ["employees"],
+    "columns": ["\"jobTitle\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"jobTitle\""],
+    "distinct": true
+  },
+  {
+    "id": 18,
+    "question": "Get customer phone numbers",
+    "intent": "Project customer name with phone number",
+    "tables": ["customers"],
+    "columns": ["\"customerName\"", "\"phone\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 19,
+    "question": "Show product MSRP values",
+    "intent": "Project product name with MSRP, highest first",
+    "tables": ["products"],
+    "columns": ["\"productName\"", "\"MSRP\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"MSRP\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 20,
+    "question": "List order numbers",
+    "intent": "Project the orders primary key",
+    "tables": ["orders"],
+    "columns": ["\"orderNumber\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["\"orderNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 21,
+    "question": "Get orders with customer names",
+    "intent": "Inner join orders to customers; project order info plus customer name",
+    "tables": ["orders o"],
+    "columns": ["o.\"orderNumber\"", "o.\"orderDate\"", "o.\"status\"", "c.\"customerName\""],
+    "joins": [
+      {"type": "INNER", "table": "customers c", "on": "c.\"customerNumber\" = o.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["o.\"orderNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 22,
+    "question": "Get employees with office city",
+    "intent": "Inner join employees to offices; show each employee's office city",
+    "tables": ["employees e"],
+    "columns": ["e.\"employeeNumber\"", "e.\"firstName\"", "e.\"lastName\"", "e.\"jobTitle\"", "o.\"city\""],
+    "joins": [
+      {"type": "INNER", "table": "offices o", "on": "o.\"officeCode\" = e.\"officeCode\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["e.\"employeeNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 23,
+    "question": "Get payments with customer names",
+    "intent": "Inner join payments to customers; show each payment with the paying customer's name",
+    "tables": ["payments p"],
+    "columns": ["p.\"customerNumber\"", "c.\"customerName\"", "p.\"checkNumber\"", "p.\"paymentDate\"", "p.\"amount\""],
+    "joins": [
+      {"type": "INNER", "table": "customers c", "on": "c.\"customerNumber\" = p.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["p.\"paymentDate\""],
+    "distinct": false
+  },
+  {
+    "id": 24,
+    "question": "Get order details with product names",
+    "intent": "Inner join orderdetails to products; show each line item with product name",
+    "tables": ["orderdetails od"],
+    "columns": ["od.\"orderNumber\"", "od.\"productCode\"", "pr.\"productName\"", "od.\"quantityOrdered\"", "od.\"priceEach\""],
+    "joins": [
+      {"type": "INNER", "table": "products pr", "on": "pr.\"productCode\" = od.\"productCode\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["od.\"orderNumber\"", "od.\"orderLineNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 25,
+    "question": "Get products with product line description",
+    "intent": "Inner join products to productlines; show product with its line's description",
+    "tables": ["products p"],
+    "columns": ["p.\"productCode\"", "p.\"productName\"", "p.\"productLine\"", "pl.\"textDescription\""],
+    "joins": [
+      {"type": "INNER", "table": "productlines pl", "on": "pl.\"productLine\" = p.\"productLine\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["p.\"productLine\"", "p.\"productName\""],
+    "distinct": false
+  },
+  {
+    "id": 26,
+    "question": "Get customers with sales rep names",
+    "intent": "Left join customers to employees; preserve customers with no rep",
+    "tables": ["customers c"],
+    "columns": ["c.\"customerNumber\"", "c.\"customerName\"", "e.\"firstName\" || ' ' || e.\"lastName\" AS \"salesRep\""],
+    "joins": [
+      {"type": "LEFT", "table": "employees e", "on": "e.\"employeeNumber\" = c.\"salesRepEmployeeNumber\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["c.\"customerName\""],
+    "distinct": false
+  },
+  {
+    "id": 27,
+    "question": "Get orders with customer city",
+    "intent": "Inner join orders to customers; project order info with customer city",
+    "tables": ["orders o"],
+    "columns": ["o.\"orderNumber\"", "o.\"orderDate\"", "o.\"status\"", "c.\"customerName\"", "c.\"city\""],
+    "joins": [
+      {"type": "INNER", "table": "customers c", "on": "c.\"customerNumber\" = o.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["o.\"orderDate\""],
+    "distinct": false
+  },
+  {
+    "id": 28,
+    "question": "Get employees and their manager",
+    "intent": "Self-join on employees: each employee plus their reportsTo manager",
+    "tables": ["employees e"],
+    "columns": ["e.\"employeeNumber\"", "e.\"firstName\" || ' ' || e.\"lastName\" AS \"employee\"", "e.\"jobTitle\"", "m.\"firstName\" || ' ' || m.\"lastName\" AS \"manager\""],
+    "joins": [
+      {"type": "LEFT", "table": "employees m", "on": "m.\"employeeNumber\" = e.\"reportsTo\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["e.\"employeeNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 29,
+    "question": "Get orderdetails with product vendor",
+    "intent": "Inner join orderdetails to products; expose vendor per line item",
+    "tables": ["orderdetails od"],
+    "columns": ["od.\"orderNumber\"", "od.\"productCode\"", "p.\"productName\"", "p.\"productVendor\"", "od.\"quantityOrdered\"", "od.\"priceEach\""],
+    "joins": [
+      {"type": "INNER", "table": "products p", "on": "p.\"productCode\" = od.\"productCode\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["p.\"productVendor\"", "od.\"orderNumber\""],
+    "distinct": false
+  },
+  {
+    "id": 30,
+    "question": "Get payments with customer country",
+    "intent": "Inner join payments to customers; project country per payment",
+    "tables": ["payments p"],
+    "columns": ["p.\"customerNumber\"", "c.\"customerName\"", "c.\"country\"", "p.\"checkNumber\"", "p.\"paymentDate\"", "p.\"amount\""],
+    "joins": [
+      {"type": "INNER", "table": "customers c", "on": "c.\"customerNumber\" = p.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": [],
+    "order_by": ["c.\"country\"", "p.\"paymentDate\""],
+    "distinct": false
+  },
+  {
+    "id": 31,
+    "question": "Count customers per country",
+    "intent": "Group customers by country and count rows per group",
+    "tables": ["customers"],
+    "columns": ["\"country\"", "COUNT(*) AS \"customerCount\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"country\""],
+    "order_by": ["\"customerCount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 32,
+    "question": "Total payments per customer",
+    "intent": "Sum payment amounts grouped by customer; expose customer name",
+    "tables": ["payments p"],
+    "columns": ["p.\"customerNumber\"", "c.\"customerName\"", "SUM(p.\"amount\") AS \"totalPaid\""],
+    "joins": [
+      {"type": "INNER", "table": "customers c", "on": "c.\"customerNumber\" = p.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": ["p.\"customerNumber\"", "c.\"customerName\""],
+    "order_by": ["\"totalPaid\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 33,
+    "question": "Number of orders per status",
+    "intent": "Group orders by status and count",
+    "tables": ["orders"],
+    "columns": ["\"status\"", "COUNT(*) AS \"orderCount\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"status\""],
+    "order_by": ["\"orderCount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 34,
+    "question": "Products per product line",
+    "intent": "Group products by their productLine and count",
+    "tables": ["products"],
+    "columns": ["\"productLine\"", "COUNT(*) AS \"productCount\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"productLine\""],
+    "order_by": ["\"productCount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 35,
+    "question": "Employees per office",
+    "intent": "Left join offices to employees and count employees per office",
+    "tables": ["offices o"],
+    "columns": ["o.\"officeCode\"", "o.\"city\"", "COUNT(e.\"employeeNumber\") AS \"employeeCount\""],
+    "joins": [
+      {"type": "LEFT", "table": "employees e", "on": "e.\"officeCode\" = o.\"officeCode\""}
+    ],
+    "filters": [],
+    "group_by": ["o.\"officeCode\"", "o.\"city\""],
+    "order_by": ["\"employeeCount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 36,
+    "question": "Total stock per product vendor",
+    "intent": "Sum quantityInStock grouped by vendor",
+    "tables": ["products"],
+    "columns": ["\"productVendor\"", "SUM(\"quantityInStock\") AS \"totalStock\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"productVendor\""],
+    "order_by": ["\"totalStock\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 37,
+    "question": "Average buy price per product line",
+    "intent": "Average buyPrice grouped by productLine, rounded to 2 decimals",
+    "tables": ["products"],
+    "columns": ["\"productLine\"", "ROUND(AVG(\"buyPrice\"), 2) AS \"avgBuyPrice\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"productLine\""],
+    "order_by": ["\"avgBuyPrice\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 38,
+    "question": "Orders per customer",
+    "intent": "Left join customers to orders, count orders per customer",
+    "tables": ["customers c"],
+    "columns": ["c.\"customerNumber\"", "c.\"customerName\"", "COUNT(o.\"orderNumber\") AS \"orderCount\""],
+    "joins": [
+      {"type": "LEFT", "table": "orders o", "on": "o.\"customerNumber\" = c.\"customerNumber\""}
+    ],
+    "filters": [],
+    "group_by": ["c.\"customerNumber\"", "c.\"customerName\""],
+    "order_by": ["\"orderCount\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 39,
+    "question": "Max MSRP per product line",
+    "intent": "Maximum MSRP grouped by productLine",
+    "tables": ["products"],
+    "columns": ["\"productLine\"", "MAX(\"MSRP\") AS \"maxMSRP\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"productLine\""],
+    "order_by": ["\"maxMSRP\" DESC"],
+    "distinct": false
+  },
+  {
+    "id": 40,
+    "question": "Min buy price per vendor",
+    "intent": "Minimum buyPrice grouped by vendor",
+    "tables": ["products"],
+    "columns": ["\"productVendor\"", "MIN(\"buyPrice\") AS \"minBuyPrice\""],
+    "joins": [],
+    "filters": [],
+    "group_by": ["\"productVendor\""],
+    "order_by": ["\"minBuyPrice\""],
+    "distinct": false
+  },
+  {
+    "id": 41,
+    "question": "Total number of customers",
+    "intent": "Whole-table COUNT of customers",
+    "tables": ["customers"],
+    "columns": ["COUNT(*) AS \"totalCustomers\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 42,
+    "question": "Total number of products",
+    "intent": "Whole-table COUNT of products",
+    "tables": ["products"],
+    "columns": ["COUNT(*) AS \"totalProducts\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 43,
+    "question": "Total revenue from payments",
+    "intent": "SUM of payments.amount",
+    "tables": ["payments"],
+    "columns": ["SUM(\"amount\") AS \"totalRevenue\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 44,
+    "question": "Average product price",
+    "intent": "Average MSRP across all products",
+    "tables": ["products"],
+    "columns": ["ROUND(AVG(\"MSRP\"), 2) AS \"avgMSRP\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 45,
+    "question": "Max payment amount",
+    "intent": "Single-value aggregate over payments",
+    "tables": ["payments"],
+    "columns": ["MAX(\"amount\") AS \"maxPayment\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 46,
+    "question": "Min payment amount",
+    "intent": "Single-value aggregate over payments",
+    "tables": ["payments"],
+    "columns": ["MIN(\"amount\") AS \"minPayment\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 47,
+    "question": "Count total orders",
+    "intent": "Whole-table COUNT of orders",
+    "tables": ["orders"],
+    "columns": ["COUNT(*) AS \"totalOrders\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 48,
+    "question": "Total quantity in stock",
+    "intent": "SUM of products.quantityInStock",
+    "tables": ["products"],
+    "columns": ["SUM(\"quantityInStock\") AS \"totalStock\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 49,
+    "question": "Average MSRP",
+    "intent": "Average MSRP across all products",
+    "tables": ["products"],
+    "columns": ["ROUND(AVG(\"MSRP\"), 2) AS \"avgMSRP\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  },
+  {
+    "id": 50,
+    "question": "Number of employees",
+    "intent": "Whole-table COUNT of employees",
+    "tables": ["employees"],
+    "columns": ["COUNT(*) AS \"totalEmployees\""],
+    "joins": [],
+    "filters": [],
+    "group_by": [],
+    "order_by": [],
+    "distinct": false
+  }
+]
