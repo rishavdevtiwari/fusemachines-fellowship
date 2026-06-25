@@ -1,0 +1,4 @@
+.venv/
+gspc_data.csv
+*.log
+__pycache__/
