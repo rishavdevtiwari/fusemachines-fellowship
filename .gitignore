@@ -4,3 +4,5 @@ Week2_SoftEng/project/.vscode
 Week2_SoftEng/project/.vscode/settings.json
 Week3_SoftEngPt2/project/.vscode
 Week3_SoftEngPt2/project/.vscode/settings.json
+.venv/
+Week9/__pycache__/
