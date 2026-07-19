@@ -8,3 +8,8 @@ Week3_SoftEngPt2/project/.vscode/settings.json
 Week9/__pycache__/
 week10/dataset/
 week10/archive.zip
+Week11/guidelines/W11_CV_Project_Guide.pdf
+Week11/data/*
+!Week11/data/resnet50_cifar10.onnx
+.ipynb_checkpoints/
+**/__pycache__/
