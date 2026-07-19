@@ -13,7 +13,7 @@ The custom multi-layer perceptron was implemented without using `nn.Sequential` 
 - **Hidden layer**: Dense linear transformation to 128 units, followed by optional Batch Normalization, Activation (ReLU/Sigmoid), and Dropout.
 - **Output layer**: Dense linear mapping from 128 units to 6 logits (defect classes).
 
-The code is saved in [`part0_foundations.py`](file:///d:/Fusemachines_Fellowship/Week9/part0_foundations.py).
+The code is saved in [`part0_foundations.py`](file:///d:/Fusemachines_Fellowship/Week9_NeuralNetwork/part0_foundations.py).
 
 ### 2. Hidden Activation Comparison: ReLU vs. Sigmoid
 Over 20 training epochs on simulated data, we observed the following convergence behaviors:
@@ -132,7 +132,7 @@ Input tensor shape: $(B, 1, 200, 200)$
    *Shape*: $(B, 6)$
 
 ### 4. Baseline CNN Training Logs
-Saved in [`parta_baseline.py`](file:///d:/Fusemachines_Fellowship/Week9/parta_baseline.py).
+Saved in [`parta_baseline.py`](file:///d:/Fusemachines_Fellowship/Week9_NeuralNetwork/parta_baseline.py).
 
 ### 5. Overfitting Epoch Analysis
 Based on the loss curves saved in `parta_baseline.png`:
@@ -180,7 +180,7 @@ Adding `nn.BatchNorm2d` after every `Conv2d` layer stabilizes training:
 
 Adding augmentations alone makes the training task harder, which initially decreases validation accuracy on the small dataset without training support. However, when combined with **BatchNorm2d** (which stabilizes convergence) and **Dropout** (which prevents overfitting), the model achieves the highest validation accuracy (**93.89%**) and is robust against orientation and scale changes.
 
-The comparative plot is saved at [`partb_comparison.png`](file:///d:/Fusemachines_Fellowship/Week9/partb_comparison.png).
+The comparative plot is saved at [`partb_comparison.png`](file:///d:/Fusemachines_Fellowship/Week9_NeuralNetwork/partb_comparison.png).
 
 ### 5. Prioritization Under Engineering Constraints
 If allowed only a single technique to deploy on a new manufacturing line dataset, **Data Augmentation** should be prioritized. 

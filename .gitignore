@@ -5,11 +5,11 @@ Week2_SoftEng/project/.vscode/settings.json
 Week3_SoftEngPt2/project/.vscode
 Week3_SoftEngPt2/project/.vscode/settings.json
 .venv/
-Week9/__pycache__/
-week10/dataset/
-week10/archive.zip
-Week11/guidelines/W11_CV_Project_Guide.pdf
-Week11/data/*
-!Week11/data/resnet50_cifar10.onnx
+Week9_NeuralNetwork/__pycache__/
+Week10_ClassicalCV_ImageProcessing/dataset/
+Week10_ClassicalCV_ImageProcessing/archive.zip
+Week11_CV_DeepLearning/guidelines/W11_CV_Project_Guide.pdf
+Week11_CV_DeepLearning/data/*
+!Week11_CV_DeepLearning/data/resnet50_cifar10.onnx
 .ipynb_checkpoints/
 **/__pycache__/

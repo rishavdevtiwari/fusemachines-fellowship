@@ -92,7 +92,7 @@ def train_and_eval(model, train_loader, val_loader, epochs=15, lr=0.001):
     return val_accs
 
 def run_hardening_experiments():
-    os.makedirs("d:/Fusemachines_Fellowship/Week9", exist_ok=True)
+    os.makedirs("d:/Fusemachines_Fellowship/Week9_NeuralNetwork", exist_ok=True)
     train_sub, val_sub, _, _ = get_dataset_splits(seed=42)
     
     # 1. Define transforms
@@ -146,7 +146,7 @@ def run_hardening_experiments():
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
-    plot_path = "d:/Fusemachines_Fellowship/Week9/partb_comparison.png"
+    plot_path = "d:/Fusemachines_Fellowship/Week9_NeuralNetwork/partb_comparison.png"
     plt.savefig(plot_path)
     plt.close()
     

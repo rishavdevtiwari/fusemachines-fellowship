@@ -12,7 +12,7 @@ from partb_hardening import HardenedDefectCNN
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
 def run_tuning():
-    os.makedirs("d:/Fusemachines_Fellowship/Week9", exist_ok=True)
+    os.makedirs("d:/Fusemachines_Fellowship/Week9_NeuralNetwork", exist_ok=True)
     train_sub, val_sub, test_sub, class_names = get_dataset_splits(seed=42)
     
     # Define transforms

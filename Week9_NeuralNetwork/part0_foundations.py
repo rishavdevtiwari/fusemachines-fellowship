@@ -81,7 +81,7 @@ def evaluate_mlp(model, X_val, y_val, criterion):
 
 def run_experiments():
     # Make sure output directory exists
-    os.makedirs("d:/Fusemachines_Fellowship/Week9", exist_ok=True)
+    os.makedirs("d:/Fusemachines_Fellowship/Week9_NeuralNetwork", exist_ok=True)
     
     input_dim = 40000  # 200 * 200 grayscale image size
     hidden_dim = 128
@@ -138,7 +138,7 @@ def run_experiments():
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
-    plot_path = "d:/Fusemachines_Fellowship/Week9/part0_optimizers.png"
+    plot_path = "d:/Fusemachines_Fellowship/Week9_NeuralNetwork/part0_optimizers.png"
     plt.savefig(plot_path)
     plt.close()
     print(f"Saved optimizer convergence plot to: {plot_path}\n")

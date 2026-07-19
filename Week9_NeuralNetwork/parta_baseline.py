@@ -55,7 +55,7 @@ def calculate_manual_f1(preds, targets, num_classes=6):
     return f1_scores
 
 def run_baseline_pipeline():
-    os.makedirs("d:/Fusemachines_Fellowship/Week9", exist_ok=True)
+    os.makedirs("d:/Fusemachines_Fellowship/Week9_NeuralNetwork", exist_ok=True)
     
     # 1. Dataset splits and diagnostics
     train_sub, val_sub, test_sub, class_names = get_dataset_splits(seed=42)
@@ -168,7 +168,7 @@ def run_baseline_pipeline():
     plt.legend()
     
     plt.tight_layout()
-    plot_path = "d:/Fusemachines_Fellowship/Week9/parta_baseline.png"
+    plot_path = "d:/Fusemachines_Fellowship/Week9_NeuralNetwork/parta_baseline.png"
     plt.savefig(plot_path)
     plt.close()
     print(f"Saved baseline loss/accuracy curves to: {plot_path}\n")
