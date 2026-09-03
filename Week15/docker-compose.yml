@@ -1,0 +1,69 @@
+# ==============================================================================
+# Docker Compose Multi-Container Orchestration (Task 2 Deliverable)
+# Orchestrates FastAPI Backend (port 8000) and Streamlit Web UI (port 8501)
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # 1. FastAPI Asynchronous Backend Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shopassist_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - PRIMARY_PROVIDER=${PRIMARY_PROVIDER:-gemini}
+      - FALLBACK_PROVIDER=${FALLBACK_PROVIDER:-mock}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - VLLM_BASE_URL=http://api:8000/v1
+      - RATE_LIMIT_RPM=60
+      - CACHE_TTL_SECONDS=3600
+      - USE_QUANTIZED_ONNX=true
+    volumes:
+      - ./data:/app/data:ro
+      - ./models:/app/models:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - shopassist_net
+
+  # 2. Streamlit Interactive Web Application
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shopassist_ui
+    restart: unless-stopped
+    command: ["streamlit", "run", "src/ui/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+      - PRIMARY_PROVIDER=${PRIMARY_PROVIDER:-gemini}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      api:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data:ro
+      - ./models:/app/models:ro
+    networks:
+      - shopassist_net
+
+networks:
+  shopassist_net:
+    driver: bridge

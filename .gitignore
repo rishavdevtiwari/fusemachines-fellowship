@@ -13,3 +13,5 @@ Week11_CV_DeepLearning/data/*
 !Week11_CV_DeepLearning/data/resnet50_cifar10.onnx
 .ipynb_checkpoints/
 **/__pycache__/
+
+Week15/models/*.onnx

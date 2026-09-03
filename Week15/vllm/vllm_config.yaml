@@ -1,0 +1,25 @@
+# vLLM Serving Configuration for ShopAssist AI
+server:
+  host: "0.0.0.0"
+  port: 8000
+  api_key: null
+
+model:
+  name: "mistralai/Mistral-7B-Instruct-v0.2"
+  fallback_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  trust_remote_code: true
+  dtype: "auto"
+  max_model_len: 4096
+  tensor_parallel_size: 1
+
+engine:
+  gpu_memory_utilization: 0.90
+  max_num_batched_tokens: 8192
+  max_num_seqs: 256
+  paged_attention: true
+  enable_prefix_caching: true
+
+generation_defaults:
+  temperature: 0.2
+  top_p: 0.95
+  max_tokens: 1024
