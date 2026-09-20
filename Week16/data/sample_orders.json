@@ -1,0 +1,115 @@
+{
+  "orders": [
+    {
+      "order_id": "ORD-1001",
+      "customer_name": "Sarah Connor",
+      "customer_email": "sarah.connor@example.com",
+      "order_date": "2026-09-02T10:00:00Z",
+      "status": "PROCESSING",
+      "shipping_tier": "Standard",
+      "tracking_number": "TRK-FEDEX-90182",
+      "courier": "FedEx",
+      "total_amount": 149.99,
+      "items": [
+        {"item_id": "ITM-01", "name": "Wireless Noise-Cancelling Headphones", "quantity": 1, "price": 149.99}
+      ],
+      "shipping_address": {
+        "street": "742 Evergreen Terrace",
+        "city": "Springfield",
+        "state": "IL",
+        "zip_code": "62704"
+      },
+      "hours_since_order": 2.5
+    },
+    {
+      "order_id": "ORD-1002",
+      "customer_name": "Bruce Wayne",
+      "customer_email": "bruce.wayne@example.com",
+      "order_date": "2026-09-03T18:30:00Z",
+      "status": "PENDING_CONFIRMATION",
+      "shipping_tier": "Express",
+      "tracking_number": null,
+      "courier": "UPS",
+      "total_amount": 899.50,
+      "items": [
+        {"item_id": "ITM-09", "name": "Carbon Composite Tactical Backpack", "quantity": 1, "price": 450.00},
+        {"item_id": "ITM-12", "name": "Night Vision Monocular", "quantity": 1, "price": 449.50}
+      ],
+      "shipping_address": {
+        "street": "1007 Mountain Drive",
+        "city": "Gotham",
+        "state": "NJ",
+        "zip_code": "07001"
+      },
+      "hours_since_order": 0.5
+    },
+    {
+      "order_id": "ORD-1003",
+      "customer_name": "Tony Stark",
+      "customer_email": "tony.stark@example.com",
+      "order_date": "2026-08-20T14:15:00Z",
+      "status": "DELIVERED",
+      "delivery_date": "2026-08-23T11:45:00Z",
+      "days_since_delivery": 11,
+      "shipping_tier": "Overnight Priority",
+      "tracking_number": "TRK-UPS-77291",
+      "courier": "UPS",
+      "total_amount": 349.00,
+      "items": [
+        {"item_id": "ITM-44", "name": "Smart Home Arc Reactor Lamp", "quantity": 1, "price": 349.00}
+      ],
+      "shipping_address": {
+        "street": "10880 Malibu Point",
+        "city": "Malibu",
+        "state": "CA",
+        "zip_code": "90265"
+      },
+      "hours_since_order": 336.0
+    },
+    {
+      "order_id": "ORD-1004",
+      "customer_name": "Diana Prince",
+      "customer_email": "diana.prince@example.com",
+      "order_date": "2026-09-01T08:00:00Z",
+      "status": "SHIPPED",
+      "shipping_tier": "Standard",
+      "tracking_number": "TRK-DHL-44310",
+      "courier": "DHL",
+      "estimated_delivery": "2026-09-05",
+      "total_amount": 79.95,
+      "items": [
+        {"item_id": "ITM-31", "name": "Handcrafted Leather Journal", "quantity": 1, "price": 79.95}
+      ],
+      "shipping_address": {
+        "street": "350 5th Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip_code": "10118"
+      },
+      "hours_since_order": 59.0
+    },
+    {
+      "order_id": "ORD-1005",
+      "customer_name": "Peter Parker",
+      "customer_email": "peter.parker@example.com",
+      "order_date": "2026-07-01T12:00:00Z",
+      "status": "DELIVERED",
+      "delivery_date": "2026-07-04T15:00:00Z",
+      "days_since_delivery": 61,
+      "shipping_tier": "Standard",
+      "tracking_number": "TRK-USPS-11928",
+      "courier": "USPS",
+      "total_amount": 39.99,
+      "items": [
+        {"item_id": "ITM-15", "name": "Camera Lens Cleaning Kit", "quantity": 1, "price": 39.99}
+      ],
+      "shipping_address": {
+        "street": "20 Ingram Street",
+        "city": "Forest Hills",
+        "state": "NY",
+        "zip_code": "11375"
+      },
+      "hours_since_order": 1500.0
+    }
+  ]
+}

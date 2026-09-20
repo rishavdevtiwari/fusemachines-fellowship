@@ -1,0 +1,29 @@
+{
+  "PyTorch CPU": {
+    "mean_ms": 91.34,
+    "median_p50_ms": 76.03,
+    "p90_ms": 163.4,
+    "p95_ms": 177.25,
+    "p99_ms": 198.22,
+    "throughput_qps": 10.87,
+    "model_size_mb": 255.0
+  },
+  "ONNX Runtime (FP32)": {
+    "mean_ms": 152.78,
+    "median_p50_ms": 149.05,
+    "p90_ms": 179.46,
+    "p95_ms": 185.12,
+    "p99_ms": 199.0,
+    "throughput_qps": 6.51,
+    "model_size_mb": 255.55
+  },
+  "ONNX Runtime (INT8 Quantized)": {
+    "mean_ms": 146.47,
+    "median_p50_ms": 128.73,
+    "p90_ms": 187.23,
+    "p95_ms": 238.49,
+    "p99_ms": 399.07,
+    "throughput_qps": 6.78,
+    "model_size_mb": 64.24
+  }
+}

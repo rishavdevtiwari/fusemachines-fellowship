@@ -1,0 +1,408 @@
+{
+  "benchmark": {
+    "multi_agent": {
+      "summary": {
+        "total_cases": 7,
+        "completed_cases": 7,
+        "completion_rate_pct": 100.0,
+        "tool_correctness_rate_pct": 100.0,
+        "avg_trajectory_length": 2.29,
+        "hard_failures": 0,
+        "soft_failures": 0,
+        "cascading_soft_failures": 0,
+        "total_tokens": 13781,
+        "avg_tokens_per_query": 1968.7,
+        "avg_coordination_tokens": 672.4,
+        "total_estimated_cost_usd": 0.003446,
+        "avg_latency_ms": 0.84
+      },
+      "cases": [
+        {
+          "case_id": "TC-01",
+          "category": "order_tracking",
+          "query": "Where is my package for order ORD-1001 and who is delivering it?",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 1046,
+          "completion_tokens": 523,
+          "total_tokens": 1569,
+          "coordination_tokens": 649,
+          "estimated_cost_usd": 0.000392,
+          "latency_ms": 1.21
+        },
+        {
+          "case_id": "TC-02",
+          "category": "cancellation_inquiry",
+          "query": "Can I cancel my order ORD-1002 and how much fee will I be charged?",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 3,
+          "tools_called": [
+            "calculate_cancellation_fee",
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status",
+            "calculate_cancellation_fee"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 1717,
+          "completion_tokens": 858,
+          "total_tokens": 2575,
+          "coordination_tokens": 682,
+          "estimated_cost_usd": 0.000644,
+          "latency_ms": 0.96
+        },
+        {
+          "case_id": "TC-03",
+          "category": "damaged_return_dispute",
+          "query": "I received order ORD-1003 11 days ago, but the package arrived cracked and damaged. Am I entitled to a full refund or will I be charged a return shipping fee?",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 4,
+          "tools_called": [
+            "check_order_status",
+            "check_refund_eligibility"
+          ],
+          "expected_tools": [
+            "check_order_status",
+            "check_refund_eligibility"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 2784,
+          "completion_tokens": 1392,
+          "total_tokens": 4176,
+          "coordination_tokens": 757,
+          "estimated_cost_usd": 0.001044,
+          "latency_ms": 2.01
+        },
+        {
+          "case_id": "TC-04",
+          "category": "ambiguous_missing_id",
+          "query": "I want to cancel my recent purchase and get my money back.",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 1,
+          "tools_called": [],
+          "expected_tools": [],
+          "stopping_condition": "clarification_needed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 432,
+          "completion_tokens": 215,
+          "total_tokens": 647,
+          "coordination_tokens": 647,
+          "estimated_cost_usd": 0.000162,
+          "latency_ms": 0.1
+        },
+        {
+          "case_id": "TC-05",
+          "category": "human_escalation",
+          "query": "This is unacceptable, I was double charged for order ORD-1001 and your warehouse refuses to answer. Connect me to a human supervisor immediately!",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 1,
+          "tools_called": [
+            "escalate_to_human"
+          ],
+          "expected_tools": [
+            "escalate_to_human"
+          ],
+          "stopping_condition": "escalation_triggered",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 442,
+          "completion_tokens": 221,
+          "total_tokens": 663,
+          "coordination_tokens": 663,
+          "estimated_cost_usd": 0.000166,
+          "latency_ms": 0.1
+        },
+        {
+          "case_id": "TC-06",
+          "category": "non_existent_order",
+          "query": "Can you check the delivery ETA for order ORD-999999?",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 1024,
+          "completion_tokens": 511,
+          "total_tokens": 1535,
+          "coordination_tokens": 618,
+          "estimated_cost_usd": 0.000384,
+          "latency_ms": 0.63
+        },
+        {
+          "case_id": "TC-07",
+          "category": "cross_source_logistics",
+          "query": "Can you verify live courier tracking with FedEx for ORD-1001 to make sure the delivery is on schedule?",
+          "pattern": "multi_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 3,
+          "tools_called": [
+            "verify_courier_tracking",
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 1744,
+          "completion_tokens": 872,
+          "total_tokens": 2616,
+          "coordination_tokens": 691,
+          "estimated_cost_usd": 0.000654,
+          "latency_ms": 0.86
+        }
+      ]
+    },
+    "single_agent_baseline": {
+      "summary": {
+        "total_cases": 7,
+        "completed_cases": 4,
+        "completion_rate_pct": 57.14,
+        "tool_correctness_rate_pct": 71.43,
+        "avg_trajectory_length": 2.0,
+        "hard_failures": 0,
+        "soft_failures": 2,
+        "cascading_soft_failures": 1,
+        "total_tokens": 4697,
+        "avg_tokens_per_query": 671.0,
+        "avg_coordination_tokens": 0.0,
+        "total_estimated_cost_usd": 0.001174,
+        "avg_latency_ms": 0.36
+      },
+      "cases": [
+        {
+          "case_id": "TC-01",
+          "category": "order_tracking",
+          "query": "Where is my package for order ORD-1001 and who is delivering it?",
+          "pattern": "single_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 436,
+          "completion_tokens": 217,
+          "total_tokens": 653,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000163,
+          "latency_ms": 0.41
+        },
+        {
+          "case_id": "TC-02",
+          "category": "cancellation_inquiry",
+          "query": "Can I cancel my order ORD-1002 and how much fee will I be charged?",
+          "pattern": "single_agent",
+          "completed": false,
+          "tool_correctness": false,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status",
+            "calculate_cancellation_fee"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": "soft_failure",
+          "failure_reason": "Tool selection mismatch: called ['check_order_status'], expected ['check_order_status', 'calculate_cancellation_fee']",
+          "prompt_tokens": 448,
+          "completion_tokens": 223,
+          "total_tokens": 671,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000168,
+          "latency_ms": 0.4
+        },
+        {
+          "case_id": "TC-03",
+          "category": "damaged_return_dispute",
+          "query": "I received order ORD-1003 11 days ago, but the package arrived cracked and damaged. Am I entitled to a full refund or will I be charged a return shipping fee?",
+          "pattern": "single_agent",
+          "completed": false,
+          "tool_correctness": true,
+          "trajectory_length": 3,
+          "tools_called": [
+            "check_order_status",
+            "check_refund_eligibility"
+          ],
+          "expected_tools": [
+            "check_order_status",
+            "check_refund_eligibility"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": "cascading_soft_failure",
+          "failure_reason": "Policy auditor failed to recognize damage fee waiver exception; penalty miscalculated.",
+          "prompt_tokens": 804,
+          "completion_tokens": 402,
+          "total_tokens": 1206,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000302,
+          "latency_ms": 0.63
+        },
+        {
+          "case_id": "TC-04",
+          "category": "ambiguous_missing_id",
+          "query": "I want to cancel my recent purchase and get my money back.",
+          "pattern": "single_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 1,
+          "tools_called": [],
+          "expected_tools": [],
+          "stopping_condition": "clarification_needed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 170,
+          "completion_tokens": 84,
+          "total_tokens": 254,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 6.3e-05,
+          "latency_ms": 0.06
+        },
+        {
+          "case_id": "TC-05",
+          "category": "human_escalation",
+          "query": "This is unacceptable, I was double charged for order ORD-1001 and your warehouse refuses to answer. Connect me to a human supervisor immediately!",
+          "pattern": "single_agent",
+          "completed": false,
+          "tool_correctness": false,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "escalate_to_human"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": "soft_failure",
+          "failure_reason": "Expected stopping condition 'escalation_triggered' but got 'task_completed'",
+          "prompt_tokens": 462,
+          "completion_tokens": 231,
+          "total_tokens": 693,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000173,
+          "latency_ms": 0.33
+        },
+        {
+          "case_id": "TC-06",
+          "category": "non_existent_order",
+          "query": "Can you check the delivery ETA for order ORD-999999?",
+          "pattern": "single_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 366,
+          "completion_tokens": 183,
+          "total_tokens": 549,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000137,
+          "latency_ms": 0.34
+        },
+        {
+          "case_id": "TC-07",
+          "category": "cross_source_logistics",
+          "query": "Can you verify live courier tracking with FedEx for ORD-1001 to make sure the delivery is on schedule?",
+          "pattern": "single_agent",
+          "completed": true,
+          "tool_correctness": true,
+          "trajectory_length": 2,
+          "tools_called": [
+            "check_order_status"
+          ],
+          "expected_tools": [
+            "check_order_status"
+          ],
+          "stopping_condition": "task_completed",
+          "failure_type": null,
+          "failure_reason": null,
+          "prompt_tokens": 448,
+          "completion_tokens": 223,
+          "total_tokens": 671,
+          "coordination_tokens": 0,
+          "estimated_cost_usd": 0.000168,
+          "latency_ms": 0.34
+        }
+      ]
+    },
+    "comparison": {
+      "coordination_token_overhead_pct": 193.4,
+      "completion_rate_delta_pct": 42.86,
+      "tool_correctness_delta_pct": 28.57
+    }
+  },
+  "failure_injection": {
+    "tool_unavailable": {
+      "failure_injected": "DatabaseConnectionTimeout (503)",
+      "recognized_by_agent": true,
+      "hallucination_avoided": true,
+      "graceful_response": true,
+      "stopping_condition": "task_completed",
+      "final_response": "We are currently experiencing a temporary connection delay with our live warehouse database. However, according to our standard corporate policies for **Order ORD-1001**, you are fully protected. If you wish to cancel or return your purchase, our support team can manually process your request without any penalties. Would you like me to connect you with a live agent?",
+      "trajectory_steps": 2
+    },
+    "malformed_rag": {
+      "failure_injected": "Corrupted UTF-8 / Binary Chunks",
+      "system_survived_without_crash": true,
+      "corruption_filtered_out": true,
+      "stopping_condition": "task_completed",
+      "final_response": "I have thoroughly reviewed your dispute for **Order ORD-1003**. Because you reported that your item arrived damaged, our corporate policy (Damaged on arrival exception grants 100% full refund with prepaid return shipping waiver.) waives the standard $5.99 return shipping fee. You are eligible for a **100% full refund of $343.01**. A prepaid return shipping label has been generated for your convenience.",
+      "trajectory_steps": 4
+    },
+    "timeout": {
+      "failure_injected": "Gateway OperationTimeout (504)",
+      "timeout_detected": true,
+      "degraded_safely": true,
+      "final_response": "We are currently experiencing a temporary connection delay with our live warehouse database. However, according to our standard corporate policies for **Order ORD-1002**, you are fully protected. If you wish to cancel or return your purchase, our support team can manually process your request without any penalties. Would you like me to connect you with a live agent?"
+    }
+  }
+}

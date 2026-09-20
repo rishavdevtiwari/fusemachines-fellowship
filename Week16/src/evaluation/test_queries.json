@@ -1,0 +1,74 @@
+[
+  {
+    "id": "TC-01",
+    "category": "order_tracking",
+    "query": "Where is my package for order ORD-1001 and who is delivering it?",
+    "target_order_id": "ORD-1001",
+    "expected_tools": ["check_order_status"],
+    "expected_waiver": false,
+    "max_acceptable_steps": 2,
+    "complexity": "low"
+  },
+  {
+    "id": "TC-02",
+    "category": "cancellation_inquiry",
+    "query": "Can I cancel my order ORD-1002 and how much fee will I be charged?",
+    "target_order_id": "ORD-1002",
+    "expected_tools": ["check_order_status", "calculate_cancellation_fee"],
+    "expected_waiver": false,
+    "max_acceptable_steps": 3,
+    "complexity": "medium"
+  },
+  {
+    "id": "TC-03",
+    "category": "damaged_return_dispute",
+    "query": "I received order ORD-1003 11 days ago, but the package arrived cracked and damaged. Am I entitled to a full refund or will I be charged a return shipping fee?",
+    "target_order_id": "ORD-1003",
+    "expected_tools": ["check_order_status", "check_refund_eligibility"],
+    "expected_waiver": true,
+    "max_acceptable_steps": 4,
+    "complexity": "high"
+  },
+  {
+    "id": "TC-04",
+    "category": "ambiguous_missing_id",
+    "query": "I want to cancel my recent purchase and get my money back.",
+    "target_order_id": null,
+    "expected_tools": [],
+    "expected_waiver": false,
+    "expected_stopping_condition": "clarification_needed",
+    "max_acceptable_steps": 2,
+    "complexity": "low"
+  },
+  {
+    "id": "TC-05",
+    "category": "human_escalation",
+    "query": "This is unacceptable, I was double charged for order ORD-1001 and your warehouse refuses to answer. Connect me to a human supervisor immediately!",
+    "target_order_id": "ORD-1001",
+    "expected_tools": ["escalate_to_human"],
+    "expected_waiver": false,
+    "expected_stopping_condition": "escalation_triggered",
+    "max_acceptable_steps": 2,
+    "complexity": "medium"
+  },
+  {
+    "id": "TC-06",
+    "category": "non_existent_order",
+    "query": "Can you check the delivery ETA for order ORD-999999?",
+    "target_order_id": "ORD-999999",
+    "expected_tools": ["check_order_status"],
+    "expected_waiver": false,
+    "max_acceptable_steps": 2,
+    "complexity": "low"
+  },
+  {
+    "id": "TC-07",
+    "category": "cross_source_logistics",
+    "query": "Can you verify live courier tracking with FedEx for ORD-1001 to make sure the delivery is on schedule?",
+    "target_order_id": "ORD-1001",
+    "expected_tools": ["check_order_status"],
+    "expected_waiver": false,
+    "max_acceptable_steps": 3,
+    "complexity": "medium"
+  }
+]
