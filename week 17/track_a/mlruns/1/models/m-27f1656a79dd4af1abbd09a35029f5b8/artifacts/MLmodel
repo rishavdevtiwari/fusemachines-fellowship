@@ -1,0 +1,23 @@
+artifact_path: file:///D:/Fusemachines_Fellowship/week 17/track_a/mlruns/1/models/m-27f1656a79dd4af1abbd09a35029f5b8/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+mlflow_version: 3.16.1
+model_id: m-27f1656a79dd4af1abbd09a35029f5b8
+model_size_bytes: 945
+model_uuid: m-27f1656a79dd4af1abbd09a35029f5b8
+prompts: null
+run_id: 0e85f2e9f83e4697b24e0818d4ae8432
+utc_time_created: '2026-09-26 16:08:57.649244'

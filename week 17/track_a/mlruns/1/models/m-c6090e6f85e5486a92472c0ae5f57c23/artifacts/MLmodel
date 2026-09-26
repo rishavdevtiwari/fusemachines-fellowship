@@ -1,0 +1,23 @@
+artifact_path: file:///D:/Fusemachines_Fellowship/week 17/track_a/mlruns/1/models/m-c6090e6f85e5486a92472c0ae5f57c23/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+mlflow_version: 3.16.1
+model_id: m-c6090e6f85e5486a92472c0ae5f57c23
+model_size_bytes: 9325
+model_uuid: m-c6090e6f85e5486a92472c0ae5f57c23
+prompts: null
+run_id: 7cb226e1047048eca4562cdeb42cf62e
+utc_time_created: '2026-09-26 16:08:15.646091'
